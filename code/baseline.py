@@ -1,23 +1,13 @@
+from pathlib import Path
+import sys
 import time
-import psutil
-import os
-import logging
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, round, avg
-
-
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
-logger = logging.getLogger(__name__)
-
-
-def get_memory_usage():
-    process = psutil.Process(os.getpid())
-    return process.memory_info().rss / (1024 * 1024)
+from pyspark.sql.functions import col, round
+from utils import log_executor_memory, logger
 
 
 def main():
     logger.info(f"--- Baseline ---")
-    logger.info(f"Initial process RAM: {get_memory_usage():.2f} MB")
     
     spark = SparkSession.builder \
         .appName("Academic_Experiment_Baseline") \
@@ -40,7 +30,8 @@ def main():
     logger.info("Run count()")
     t0 = time.time()
     row_count = df.count()
-    logger.info(f"Read {row_count} rows. Time: {time.time() - t0:.2f} s. RAM: {get_memory_usage():.2f} MB")
+    log_executor_memory(spark, stage_name="After .count()")
+    logger.info(f"Read {row_count} rows. Time: {time.time() - t0:.2f} s.")
 
     # 2. Transform
     logger.info("Stage 2: filtration and aggregation")
@@ -65,10 +56,11 @@ def main():
     logger.info("Action: show() for aggregation (Shuffle)")
     t1 = time.time()
     aggregated_df.show(10)
-    logger.info(f"Aggregation completed. Time: {time.time() - t1:.2f} s. RAM: {get_memory_usage():.2f} MB")
+    log_executor_memory(spark, stage_name="After aggregation")
+    logger.info(f"Aggregation completed. Time: {time.time() - t1:.2f} s.")
 
     total_time = time.time() - start_time
-    logger.info(f"Total execution time: {total_time:.2f} s. Total RAM: {get_memory_usage():.2f} MB")
+    logger.info(f"Total execution time: {total_time:.2f} s.")
 
     spark.stop()
 

@@ -1,0 +1,61 @@
+Successfully copied 3.07kB to spark-master:/tmp
+requests is installed already
+Successfully copied 4.1kB to spark-master:/tmp/baseline.py
+2026-03-29 21:11:30,723 - --- Baseline ---
+26/03/29 21:11:30 INFO SparkContext: Running Spark version 3.3.2
+26/03/29 21:11:30 INFO ResourceUtils: ==============================================================
+26/03/29 21:11:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/03/29 21:11:30 INFO ResourceUtils: ==============================================================
+26/03/29 21:11:30 INFO SparkContext: Submitted application: Academic_Experiment_Baseline
+26/03/29 21:11:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/03/29 21:11:30 INFO ResourceProfile: Limiting resource is cpu
+26/03/29 21:11:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/03/29 21:11:30 INFO SecurityManager: Changing view acls to: spark
+26/03/29 21:11:30 INFO SecurityManager: Changing modify acls to: spark
+26/03/29 21:11:30 INFO SecurityManager: Changing view acls groups to: 
+26/03/29 21:11:30 INFO SecurityManager: Changing modify acls groups to: 
+26/03/29 21:11:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+26/03/29 21:11:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/03/29 21:11:31 INFO Utils: Successfully started service 'sparkDriver' on port 34887.
+26/03/29 21:11:31 INFO SparkEnv: Registering MapOutputTracker
+26/03/29 21:11:31 INFO SparkEnv: Registering BlockManagerMaster
+26/03/29 21:11:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/03/29 21:11:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/03/29 21:11:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/03/29 21:11:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-c983b084-efe8-49ca-9e51-6c4900807bf8
+26/03/29 21:11:31 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/03/29 21:11:31 INFO SparkEnv: Registering OutputCommitCoordinator
+26/03/29 21:11:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/03/29 21:11:31 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/03/29 21:11:31 INFO TransportClientFactory: Successfully created connection to spark-master/192.168.0.2:7077 after 42 ms (0 ms spent in bootstraps)
+26/03/29 21:11:32 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260329211132-0001
+26/03/29 21:11:32 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260329211132-0001/0 on worker-20260329205420-192.168.0.4-43863 (192.168.0.4:43863) with 2 core(s)
+26/03/29 21:11:32 INFO StandaloneSchedulerBackend: Granted executor ID app-20260329211132-0001/0 on hostPort 192.168.0.4:43863 with 2 core(s), 1024.0 MiB RAM
+26/03/29 21:11:32 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35449.
+26/03/29 21:11:32 INFO NettyBlockTransferService: Server created on c7b496cdd017:35449
+26/03/29 21:11:32 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/03/29 21:11:32 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, c7b496cdd017, 35449, None)
+26/03/29 21:11:32 INFO BlockManagerMasterEndpoint: Registering block manager c7b496cdd017:35449 with 434.4 MiB RAM, BlockManagerId(driver, c7b496cdd017, 35449, None)
+26/03/29 21:11:32 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, c7b496cdd017, 35449, None)
+26/03/29 21:11:32 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, c7b496cdd017, 35449, None)
+26/03/29 21:11:32 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260329211132-0001/0 is now RUNNING
+26/03/29 21:11:32 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+2026-03-29 21:11:32,533 - Stage 1: read data from HDFS
+2026-03-29 21:12:05,668 - Run count()
+2026-03-29 21:12:10,025 - Worker [0 | 192.168.0.4]: Cache Used = 0.03 MB / Max = 434.40 MB
+2026-03-29 21:12:10,025 - Total amount of cached data in cluster: 0.03 MB
+2026-03-29 21:12:10,026 - Read 10906858 rows. Time: 4.36 s.
+2026-03-29 21:12:10,026 - Stage 2: filtration and aggregation
+2026-03-29 21:12:10,116 - Action: show() for aggregation (Shuffle)
++--------+--------+------------+
+|VendorID|count(1)|avg_distance|
++--------+--------+------------+
+|       2| 5809024|        2.97|
+|       1| 5033769|        6.64|
++--------+--------+------------+
+
+2026-03-29 21:12:20,214 - Worker [0 | 192.168.0.4]: Cache Used = 0.11 MB / Max = 434.40 MB
+2026-03-29 21:12:20,214 - Total amount of cached data in cluster: 0.11 MB
+2026-03-29 21:12:20,214 - Aggregation completed. Time: 10.10 s.
+2026-03-29 21:12:20,214 - Total execution time: 47.68 s.
+2026-03-29 21:12:20,404 - Closing down clientserver connection

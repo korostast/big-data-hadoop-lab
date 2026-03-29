@@ -117,7 +117,7 @@ services:
       - SPARK_WORKER_MEMORY=2G
       - SPARK_WORKER_CORES=2
     ports:
-      - "8082:8081" # Web UI Worker 2 (проброс на другой порт хоста)
+      - "8082:8081"
     profiles:
       - scale
     deploy:
@@ -138,7 +138,7 @@ services:
       - SPARK_WORKER_MEMORY=2G
       - SPARK_WORKER_CORES=2
     ports:
-      - "8083:8081" # Web UI Worker 3 (проброс на другой порт хоста)
+      - "8083:8081"
     profiles:
       - scale
     deploy:

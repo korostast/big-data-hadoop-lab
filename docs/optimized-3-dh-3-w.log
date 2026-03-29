@@ -1,0 +1,72 @@
+Successfully copied 3.07kB to spark-master:/tmp
+requests is installed already
+Successfully copied 5.63kB to spark-master:/tmp/optimized.py
+2026-03-29 21:26:04,373 - --- Optimized ---
+26/03/29 21:26:04 INFO SparkContext: Running Spark version 3.3.2
+26/03/29 21:26:04 INFO ResourceUtils: ==============================================================
+26/03/29 21:26:04 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/03/29 21:26:04 INFO ResourceUtils: ==============================================================
+26/03/29 21:26:04 INFO SparkContext: Submitted application: Academic_Experiment_Optimized
+26/03/29 21:26:04 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/03/29 21:26:04 INFO ResourceProfile: Limiting resource is cpu
+26/03/29 21:26:04 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/03/29 21:26:04 INFO SecurityManager: Changing view acls to: spark
+26/03/29 21:26:04 INFO SecurityManager: Changing modify acls to: spark
+26/03/29 21:26:04 INFO SecurityManager: Changing view acls groups to: 
+26/03/29 21:26:04 INFO SecurityManager: Changing modify acls groups to: 
+26/03/29 21:26:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+26/03/29 21:26:04 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/03/29 21:26:04 INFO Utils: Successfully started service 'sparkDriver' on port 37727.
+26/03/29 21:26:04 INFO SparkEnv: Registering MapOutputTracker
+26/03/29 21:26:05 INFO SparkEnv: Registering BlockManagerMaster
+26/03/29 21:26:05 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/03/29 21:26:05 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/03/29 21:26:05 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/03/29 21:26:05 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-07574e15-96ab-4927-a0bb-af29adcca92b
+26/03/29 21:26:05 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/03/29 21:26:05 INFO SparkEnv: Registering OutputCommitCoordinator
+26/03/29 21:26:05 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+26/03/29 21:26:05 INFO TransportClientFactory: Successfully created connection to spark-master/192.168.32.3:7077 after 21 ms (0 ms spent in bootstraps)
+26/03/29 21:26:05 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260329212605-0001
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260329212605-0001/0 on worker-20260329212117-192.168.32.8-40717 (192.168.32.8:40717) with 2 core(s)
+26/03/29 21:26:05 INFO StandaloneSchedulerBackend: Granted executor ID app-20260329212605-0001/0 on hostPort 192.168.32.8:40717 with 2 core(s), 1024.0 MiB RAM
+26/03/29 21:26:05 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39987.
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260329212605-0001/1 on worker-20260329212117-192.168.32.7-34315 (192.168.32.7:34315) with 2 core(s)
+26/03/29 21:26:05 INFO NettyBlockTransferService: Server created on 84ae9f0c41b2:39987
+26/03/29 21:26:05 INFO StandaloneSchedulerBackend: Granted executor ID app-20260329212605-0001/1 on hostPort 192.168.32.7:34315 with 2 core(s), 1024.0 MiB RAM
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260329212605-0001/2 on worker-20260329212117-192.168.32.9-44949 (192.168.32.9:44949) with 2 core(s)
+26/03/29 21:26:05 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/03/29 21:26:05 INFO StandaloneSchedulerBackend: Granted executor ID app-20260329212605-0001/2 on hostPort 192.168.32.9:44949 with 2 core(s), 1024.0 MiB RAM
+26/03/29 21:26:05 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 84ae9f0c41b2, 39987, None)
+26/03/29 21:26:05 INFO BlockManagerMasterEndpoint: Registering block manager 84ae9f0c41b2:39987 with 434.4 MiB RAM, BlockManagerId(driver, 84ae9f0c41b2, 39987, None)
+26/03/29 21:26:05 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 84ae9f0c41b2, 39987, None)
+26/03/29 21:26:05 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 84ae9f0c41b2, 39987, None)
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260329212605-0001/0 is now RUNNING
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260329212605-0001/2 is now RUNNING
+26/03/29 21:26:05 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260329212605-0001/1 is now RUNNING
+26/03/29 21:26:06 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+2026-03-29 21:26:06,343 - Stage 1: read data (with known data schema)
+2026-03-29 21:26:10,278 - Stage 2: .repartition() + .cache()
+2026-03-29 21:26:10,621 - Action: count() to initialize cache in memory
+2026-03-29 21:26:43,936 - Worker [2 | 192.168.32.9]: Cache Used = 252.69 MB / Max = 434.40 MB
+2026-03-29 21:26:43,937 - Worker [1 | 192.168.32.7]: Cache Used = 252.69 MB / Max = 434.40 MB
+2026-03-29 21:26:43,937 - Worker [0 | 192.168.32.8]: Cache Used = 252.68 MB / Max = 434.40 MB
+2026-03-29 21:26:43,937 - Total amount of cached data in cluster: 758.07 MB
+2026-03-29 21:26:43,937 - Read 10906858 rows. Time (with cache): 33.32 s.
+2026-03-29 21:26:43,937 - Stage 3: filtration and aggregation (using cache)
+2026-03-29 21:26:44,086 - Action: show() for aggregation (Shuffle)
++--------+--------+------------+
+|VendorID|count(1)|avg_distance|
++--------+--------+------------+
+|       2| 5809024|        2.97|
+|       1| 5033769|        6.64|
++--------+--------+------------+
+
+2026-03-29 21:26:46,479 - Worker [2 | 192.168.32.9]: Cache Used = 252.69 MB / Max = 434.40 MB
+2026-03-29 21:26:46,479 - Worker [1 | 192.168.32.7]: Cache Used = 252.71 MB / Max = 434.40 MB
+2026-03-29 21:26:46,479 - Worker [0 | 192.168.32.8]: Cache Used = 252.68 MB / Max = 434.40 MB
+2026-03-29 21:26:46,479 - Total amount of cached data in cluster: 758.09 MB
+2026-03-29 21:26:46,479 - Aggregation completed. Time: 2.39 s.
+2026-03-29 21:26:46,479 - Total execution time: 40.14 s.
+2026-03-29 21:26:46,699 - Closing down clientserver connection

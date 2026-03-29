@@ -1,0 +1,70 @@
+Successfully copied 1.71GB to namenode:/tmp/dataset.csv
+2026-03-29 21:21:59,379 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:00,326 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:01,518 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:02,038 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:03,169 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:04,712 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:07,583 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:10,876 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:12,820 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:14,413 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:16,185 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:17,410 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+2026-03-29 21:22:18,816 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+Found 1 items
+-rw-r--r--   3 root supergroup 1708674492 2026-03-29 21:22 /data/dataset.csv
+Connecting to namenode via http://namenode:9870/fsck?ugi=root&files=1&blocks=1&locations=1&path=%2Fdata%2Fdataset.csv
+FSCK started by root (auth:SIMPLE) from /192.168.32.2 for path /data/dataset.csv at Sun Mar 29 21:22:23 UTC 2026
+/data/dataset.csv 1708674492 bytes, replicated: replication=3, 13 block(s):  OK
+0. BP-990147571-192.168.32.2-1774819270546:blk_1073741825_1001 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK]]
+1. BP-990147571-192.168.32.2-1774819270546:blk_1073741826_1002 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK]]
+2. BP-990147571-192.168.32.2-1774819270546:blk_1073741827_1003 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+3. BP-990147571-192.168.32.2-1774819270546:blk_1073741828_1004 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK]]
+4. BP-990147571-192.168.32.2-1774819270546:blk_1073741829_1005 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK]]
+5. BP-990147571-192.168.32.2-1774819270546:blk_1073741830_1006 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK]]
+6. BP-990147571-192.168.32.2-1774819270546:blk_1073741831_1007 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+7. BP-990147571-192.168.32.2-1774819270546:blk_1073741832_1008 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+8. BP-990147571-192.168.32.2-1774819270546:blk_1073741833_1009 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+9. BP-990147571-192.168.32.2-1774819270546:blk_1073741834_1010 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+10. BP-990147571-192.168.32.2-1774819270546:blk_1073741835_1011 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK]]
+11. BP-990147571-192.168.32.2-1774819270546:blk_1073741836_1012 len=134217728 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK], DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK]]
+12. BP-990147571-192.168.32.2-1774819270546:blk_1073741837_1013 len=98061756 Live_repl=3  [DatanodeInfoWithStorage[192.168.32.4:9866,DS-2bdafb7a-8417-4069-99d7-d63182d43213,DISK], DatanodeInfoWithStorage[192.168.32.6:9866,DS-c4b92bbb-3c7d-4637-92e9-d0d6f99095db,DISK], DatanodeInfoWithStorage[192.168.32.5:9866,DS-b0913028-2ff0-47b5-8cf7-0311f98e8a1c,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:  3
+ Number of racks:               1
+ Total dirs:                    0
+ Total symlinks:                0
+
+Replicated Blocks:
+ Total size:    1708674492 B
+ Total files:   1
+ Total blocks (validated):      13 (avg. block size 131436499 B)
+ Minimally replicated blocks:   13 (100.0 %)
+ Over-replicated blocks:        0 (0.0 %)
+ Under-replicated blocks:       0 (0.0 %)
+ Mis-replicated blocks:         0 (0.0 %)
+ Default replication factor:    3
+ Average block replication:     3.0
+ Missing blocks:                0
+ Corrupt blocks:                0
+ Missing replicas:              0 (0.0 %)
+
+Erasure Coded Block Groups:
+ Total size:    0 B
+ Total files:   0
+ Total block groups (validated):        0
+ Minimally erasure-coded block groups:  0
+ Over-erasure-coded block groups:       0
+ Under-erasure-coded block groups:      0
+ Unsatisfactory placement block groups: 0
+ Average block group size:      0.0
+ Missing block groups:          0
+ Corrupt block groups:          0
+ Missing internal blocks:       0
+FSCK ended at Sun Mar 29 21:22:23 UTC 2026 in 6 milliseconds
+
+
+The filesystem under path '/data/dataset.csv' is HEALTHY
