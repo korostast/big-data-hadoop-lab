@@ -53,13 +53,13 @@ def main():
     ])
 
     hdfs_path = "hdfs://namenode:9000/data/dataset.csv"
-    logger.info("#1: read data (with known data schema)")
+    logger.info("Stage 1: read data (with known data schema)")
     t0 = time.time()
     df = spark.read.csv(hdfs_path, header=True, schema=schema)
     t1 = time.time()
 
     # 2. Optimizations
-    logger.info("#2: .repartition() + .cache()")
+    logger.info("Stage 2: .repartition() + .cache()")
     optimized_df = df.repartition(12).cache()
     
     logger.info("Action: count() to initialize cache in memory")
@@ -68,7 +68,7 @@ def main():
     logger.info(f"Read {row_count} rows. Time (with cache): {time.time() - t0:.2f} s. RAM: {get_memory_usage():.2f} MB")
 
     # 3. Transform with cached data 
-    logger.info("#3: filtration and aggregation (using cache)")
+    logger.info("Stage 3: filtration and aggregation (using cache)")
     
     categorical_column = "VendorID"
     numeric_column = "trip_distance"

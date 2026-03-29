@@ -29,7 +29,7 @@ def main():
 
     # 1. Read data
     hdfs_path = "hdfs://namenode:9000/data/dataset.csv"
-    logger.info("#1: read data from HDFS")
+    logger.info("Stage 1: read data from HDFS")
     
     # inferSchema=True forcefully create 1 job for types detection
     # From documentation: "Infers the input schema automatically from data. It requires one extra pass over the data"
@@ -43,7 +43,7 @@ def main():
     logger.info(f"Read {row_count} rows. Time: {time.time() - t0:.2f} s. RAM: {get_memory_usage():.2f} MB")
 
     # 2. Transform
-    logger.info("#2: filtration and aggregation")
+    logger.info("Stage 2: filtration and aggregation")
     categorical_column = "VendorID"
     numeric_column = "trip_distance"
     
