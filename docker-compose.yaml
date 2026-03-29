@@ -1,0 +1,159 @@
+services:
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: namenode
+    restart: always
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    volumes:
+      - namenode_data:/hadoop/dfs/name
+    env_file:
+      - ./hadoop.env
+    networks:
+      - bigdata-net
+
+  datanode1:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode1
+    restart: always
+    depends_on:
+      - namenode
+    volumes:
+      - datanode1_data:/hadoop/dfs/data
+    env_file:
+      - ./hadoop.env
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - bigdata-net
+
+  datanode2:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode2
+    restart: always
+    depends_on:
+      - namenode
+    volumes:
+      - datanode2_data:/hadoop/dfs/data
+    env_file:
+      - ./hadoop.env
+    profiles:
+      - scale
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - bigdata-net
+
+  datanode3:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: datanode3
+    restart: always
+    depends_on:
+      - namenode
+    volumes:
+      - datanode3_data:/hadoop/dfs/data
+    env_file:
+      - ./hadoop.env
+    profiles:
+      - scale
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - bigdata-net
+
+  spark-master:
+    image: bitnamilegacy/spark:3.3.2
+    container_name: spark-master
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - bigdata-net
+
+  spark-worker1:
+    image: bitnamilegacy/spark:3.3.2
+    container_name: spark-worker
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_CORES=2
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 5G
+    networks:
+      - bigdata-net
+
+  spark-worker-2:
+    image: bitnamilegacy/spark:3.3.2
+    container_name: spark-worker-2
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    ports:
+      - "8082:8081" # Web UI Worker 2 (проброс на другой порт хоста)
+    profiles:
+      - scale
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+    networks:
+      - bigdata-net
+
+  spark-worker-3:
+    image: bitnamilegacy/spark:3.3.2
+    container_name: spark-worker-3
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_WORKER_MEMORY=2G
+      - SPARK_WORKER_CORES=2
+    ports:
+      - "8083:8081" # Web UI Worker 3 (проброс на другой порт хоста)
+    profiles:
+      - scale
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+    networks:
+      - bigdata-net
+
+volumes:
+  namenode_data:
+  datanode1_data:
+  datanode2_data:
+  datanode3_data:
+
+networks:
+  bigdata-net:
+    driver: bridge
