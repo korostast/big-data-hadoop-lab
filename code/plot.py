@@ -8,7 +8,7 @@ action_time_sec = [10.24, 2.52, 9.63, 2.55, 7.27, 2.31]
 total_time_sec = [45.50, 54.69, 43.23, 54.50, 34.44, 39.32]
 ram_consumption = [0.11, 252.71, 0.11, 252.71, 0.12, 758.09]
 
-fig, axes = plt.subplots(1, 3, figsize=(26, 6))
+fig, axes = plt.subplots(1, 2, figsize=(18, 6))
 fig.suptitle('Baseline vs Optimized (Hadoop/Spark)', fontsize=16)
 
 x = np.arange(len(experiments))
@@ -16,7 +16,7 @@ width = 0.6
 
 # Action time
 bars1 = axes[0].bar(x, action_time_sec, width, color=['#e74c3c', '#2ecc71', '#c0392b', '#27ae60', "#ac2e20", "#1d924e"])
-axes[0].set_title('Aggregation execution time (Action)')
+axes[0].set_title('Transformation execution time (Action)')
 axes[0].set_ylabel('Seconds')
 axes[0].set_xticks(x)
 axes[0].set_xticklabels(experiments)
@@ -27,7 +27,7 @@ for bar in bars1:
 
 # Total time
 bars2 = axes[1].bar(x, total_time_sec, width, color=['#3498db', '#9b59b6', '#2980b9', '#8e44ad', "#1c6a9e", "#752f92"])
-axes[1].set_title('Общее время работы скрипта')
+axes[1].set_title('Total time')
 axes[1].set_ylabel('Seconds')
 axes[1].set_xticks(x)
 axes[1].set_xticklabels(experiments)
